@@ -1,0 +1,1245 @@
+$background: #F4EEDF;
+$plant-stem: rgb(133, 166, 77);
+$plant-leaf: rgb(95, 126, 94);
+$chair-base: #D3B19F;
+$ear: #E8C0AA;
+$dog-light: #F9F0E3;
+$dog-dark: #403F47;
+$pot: #C78F58;
+$dirt: #68594E;
+$pages: #DFD0A2;
+$book: #F8AA8F;
+$stand: #DABD59;
+$size: 300px;
+
+body {
+    background: $background;
+    margin: 0;
+    min-width: $size * 3.5;
+    min-height: $size * 4;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stack {
+    position: relative;
+    
+}
+
+@mixin pot($pot-scale) {
+    /* body of pot*/
+    position: relative;
+    width: $pot-scale * ($size * .33);
+    height: $pot-scale * ($size * .44);
+    left: 0%;
+    background: $pot;
+    transform: perspective($size) rotateX(-45deg);
+    &:before {
+      /*dirt in pot*/
+      content: '';
+      position: absolute;
+      background: $dirt;
+      height: $pot-scale * ($size * .12);
+      width: $pot-scale * ($size * .33);
+      bottom: 100%;
+      border-radius: 50% 50% 0 0;
+    }
+    &:after {
+      /* rim of pot*/
+      content: '';
+      position: absolute;
+      height: 0;
+      width: $pot-scale * ($size * .36);
+      height: $pot-scale * ($size * .14);
+      bottom: 95%;
+      left: -5%;
+      transform: perspective($size * 2) rotateX(-45deg);   
+      background: $pot;
+      background: linear-gradient(to bottom, $pot 85%, darken($pot, 10%) 85%);
+    }
+  }
+  
+  .pot {
+    @include pot(1);
+    bottom:-95%;
+  }
+  
+  @mixin book($height, $width, $color, $right) {
+      position: relative;
+      height: $height;
+      width: $width;
+      border-radius: 0 ($size * 0.25) ($size * 0.25) 0;
+      background-size: cover, $width ($height / 6.67), cover;
+      background-image:
+        radial-gradient(8% 100% at 0% 50%, $background 50%, transparent 50%),
+        linear-gradient(to bottom, $pages 80%, darken($pages, 10%) 80%),
+        radial-gradient(8% 100% at 0% 50%, transparent 50%, $pages 50%);
+      ;
+      // box-sizing: border-box;
+      border: ($height * 0.137) solid $color;
+      border-left: ($height * 0.137) solid $background;
+      right: $right;
+  }
+  
+  .books {
+    position: absolute;
+    top: $size * .35;
+    .book {
+      &:first-of-type {    
+        @include book(($size * .15), ($size * .55), (darken(desaturate($book, 20%), 10%)), 25px );
+      }
+      &:nth-of-type(2) {    
+        @include book(($size * .11), ($size * .43), (lighten($dirt, 10%)), 10px );
+      }
+      &:nth-of-type(3) {    
+        @include book(($size * .14), ($size * .65), $book, 37px );
+      }
+      &:nth-of-type(4) {    
+        @include book(($size * .10), ($size * .72), (desaturate(darken($pot, 10%), 10%)), 30px );
+      }
+      &:nth-of-type(5) {    
+        @include book(($size * .17), ($size * .74), desaturate(darken($stand, 10%), 5%), 40px );
+      }
+      &:nth-of-type(6) {    
+        @include book(($size * .13), ($size * .73), (saturate($plant-stem, 5%)), 30px );
+      }  
+    }
+  }  
+
+
+@mixin plant-stem($height, $width, $right, $border-side, $bottom, $rotate, $border-radius, $outline-side) {
+    position: absolute;
+    height: $height;
+    width: $width;
+    right: $right;
+    bottom: $bottom;
+    background: transparent;
+    border-radius: $border-radius;
+    border: ($size * 0.0125) solid transparent;
+    border-#{$border-side}: ($size * 0.0125) solid $plant-stem;
+    outline-#{outline-side}: ($size * 0.0125) solid $plant-stem;
+    transform: rotate($rotate);
+}
+
+@mixin border-bit($border-bit) {
+    border: ($size * 0.0125) solid transparent;
+    border-#{$border-bit}: ($size * 0.0125) solid $plant-stem;
+}
+
+
+.plant-1 {
+    position: absolute;
+    bottom: 100%;
+    height: $size;
+    width: $size * .33;
+
+    .stem {
+        &:first-of-type {
+            @include plant-stem(($size * .55), ($size * .5), 70%, right, -15%, -65deg, 0%, right);            
+            .leaf, .tendril {
+                position: absolute;
+                background: $plant-leaf;
+                height: $size * .05;
+                width: $size * .1;
+                transform: rotate(45deg);
+                border-radius: 95% 0;
+
+                &:first-of-type {
+                    transform-origin: 0% 90%;
+                    bottom: 12%;
+                    left: 100%;
+                    width: $size * .11;
+                }
+
+                &:nth-of-type(2) {
+                    transform-origin: 100% 50%;
+                    bottom: 10%;
+                    left: 78%;
+                    width: $size * .11;
+                }
+
+                &:nth-of-type(3) {
+                    transform-origin: 0% 90%;
+                    bottom: 30%;
+                    left: 100%;
+                }
+
+                &:nth-of-type(4) {
+                    transform-origin: 100% 50%;
+                    bottom: 30%;
+                    left: 80%;
+                }
+
+                &:nth-of-type(5) {
+                    transform-origin: 0% 90%;
+                    bottom: 50%;
+                    left: 100%;
+                }
+
+                &:nth-of-type(6) {
+                    transform-origin: 100% 50%;
+                    bottom: 50%;
+                    left: 80%;
+                }
+
+                &:nth-of-type(7) {
+                    transform-origin: 0% 90%;
+                    bottom: 70%;
+                    left: 100%;
+                    width: $size * .09;
+                }
+
+                &:nth-of-type(8) {
+                    transform-origin: 100% 50%;
+                    bottom: 70%;
+                    left: 80%;
+                    width: $size * .09;
+                }
+
+                &:nth-of-type(9) {
+                    transform-origin: 0% 90%;
+                    bottom: 90%;
+                    left: 100%;
+                    width: $size * .08;
+                }
+
+                &:nth-of-type(10) {
+                    transform-origin: 100% 50%;
+                    bottom: 90%;
+                    left: 82%;
+                    width: $size * .08;
+                }
+                &:nth-of-type(11) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .12;
+                    height: $size * .08;
+                    transform: rotate(-15deg);
+                }
+
+                &:nth-of-type(11):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .04;
+                    left: 37%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+
+                &:nth-of-type(12) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .11;
+                    height: $size * .08;
+                    transform: scale(-1, 1); 
+                }
+                &:nth-of-type(12):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .04;
+                    left: 37%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+                &:nth-of-type(13) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .14;
+                    height: $size * .12;
+                    transform: rotate(-15deg);
+                }
+                &:nth-of-type(13):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .05;
+                    left: 40%;
+                    bottom: -30%;
+                    transform: scale(1, -1);
+                }
+
+                &:nth-of-type(14) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .18;
+                    height: $size * .15;
+                    transform: scale(-1, 1); 
+                }
+                &:nth-of-type(14):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .1;
+                    height: $size * .06;
+                    left: 40%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+                &:nth-of-type(15) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .11;
+                    height: $size * .10;
+                    transform: rotate(-15deg);
+                }
+
+                &:nth-of-type(16) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .18;
+                    height: $size * .12;
+                    transform: scale(-1, 1); 
+                }
+            }
+            
+        }
+
+        &:nth-of-type(2) {
+            @include plant-stem(($size), ($size * .5), 56%, right, -15%, -32deg, 50%, right);
+            .leaf, .tendril {
+                position: absolute;
+                background: $plant-leaf;
+                height: $size * .05;
+                width: $size * .1;
+                transform: rotate(45deg);
+                border-radius: 95% 0;
+
+                &:first-of-type {
+                    transform-origin: 100% 50%;
+                    bottom: 80%;
+                    left: 85%;
+                    width: $size * .08;
+                }
+
+                &:nth-of-type(2) {
+                    transform-origin: 100% 50%;
+                    bottom: 75%;
+                    left: 70%;
+                    width: $size * .09;
+                }
+
+                &:nth-of-type(3) {
+                    transform-origin: 100% 50%;
+                    bottom: 85%;
+                    left: 62%;
+                    width: $size * .08;
+                }
+
+                &:nth-of-type(4) {
+                    transform-origin: 0% 100%;
+                    bottom: 90%;
+                    left: 80%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .11;
+                    height: $size * .08;
+                    transform: rotate(-15deg);
+                }
+                &:nth-of-type(4).tendril:after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .04;
+                    left: 35%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+
+                &:nth-of-type(5) {
+                    transform-origin: 0% 100%;
+                    bottom: 90%;
+                    left: 80%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .13;
+                    height: $size * .12;
+                    transform: scale(-1, 1);
+                   
+                    
+                }
+                
+            }
+            
+            
+        }
+
+        &:nth-of-type(3) {
+            @include plant-stem(($size * .5), ($size * .5), 15%, right, 45%, 20deg, 0%, right);
+
+            .leaf, .tendril {
+                position: absolute;
+                background: $plant-leaf;
+                height: $size * .05;
+                width: $size * .1;
+                transform: rotate(45deg);
+                border-radius: 95% 0;
+
+                &:first-of-type {
+                    transform-origin: 0% 90%;
+                    bottom: 12%;
+                    left: 100%;
+                    width: $size * .11;
+                }
+
+                &:nth-of-type(2) {
+                    transform-origin: 100% 50%;
+                    bottom: 10%;
+                    left: 78%;
+                    width: $size * .11;
+                }
+
+                &:nth-of-type(3) {
+                    transform-origin: 0% 90%;
+                    bottom: 30%;
+                    left: 100%;
+                }
+
+                &:nth-of-type(4) {
+                    transform-origin: 100% 50%;
+                    bottom: 30%;
+                    left: 80%;
+                }
+
+                &:nth-of-type(5) {
+                    transform-origin: 0% 90%;
+                    bottom: 50%;
+                    left: 100%;
+                }
+
+                &:nth-of-type(6) {
+                    transform-origin: 100% 50%;
+                    bottom: 50%;
+                    left: 80%;
+                }
+
+                &:nth-of-type(7) {
+                    transform-origin: 0% 90%;
+                    bottom: 70%;
+                    left: 100%;
+                    width: $size * .09;
+                }
+
+                &:nth-of-type(8) {
+                    transform-origin: 100% 50%;
+                    bottom: 70%;
+                    left: 80%;
+                    width: $size * .09;
+                }
+
+                &:nth-of-type(9) {
+                    transform-origin: 0% 90%;
+                    bottom: 90%;
+                    left: 100%;
+                    width: $size * .08;
+                }
+
+                &:nth-of-type(10) {
+                    transform-origin: 100% 50%;
+                    bottom: 90%;
+                    left: 82%;
+                    width: $size * .08;
+                }
+                &:nth-of-type(11) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .12;
+                    height: $size * .08;
+                    transform: rotate(-15deg);
+                }
+
+                &:nth-of-type(11):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .04;
+                    left: 37%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+
+                &:nth-of-type(12) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .11;
+                    height: $size * .08;
+                    transform: scale(-1, 1); 
+                }
+                &:nth-of-type(12):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .04;
+                    left: 37%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+                &:nth-of-type(13) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .14;
+                    height: $size * .12;
+                    transform: rotate(-15deg);
+                }
+                &:nth-of-type(13):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .07;
+                    height: $size * .05;
+                    left: 40%;
+                    bottom: -30%;
+                    transform: scale(1, -1);
+                }
+
+                &:nth-of-type(14) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .18;
+                    height: $size * .15;
+                    transform: scale(-1, 1); 
+                }
+                &:nth-of-type(14):after {
+                    content: "";
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.002) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    position: absolute;
+                    box-sizing: border-box;
+                    width: $size * .1;
+                    height: $size * .06;
+                    left: 40%;
+                    bottom: 0%;
+                    transform: scale(1, -1);
+                }
+                &:nth-of-type(15) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 100%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .11;
+                    height: $size * .10;
+                    transform: rotate(-15deg);
+                }
+
+                &:nth-of-type(16) {
+                    transform-origin: 0% 100%;
+                    bottom: 100%;
+                    left: 102%;
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                    border: ($size * 0.005) solid $plant-stem;
+                    border-bottom: 0;
+                    background: transparent;
+                    box-sizing: border-box;
+                    width: $size * .18;
+                    height: $size * .12;
+                    transform: scale(-1, 1); 
+                }
+                
+                
+            }
+            }
+
+            &:nth-of-type(4) {
+                @include plant-stem(($size * .55), ($size * .5), 100%, right, 10%, -65deg, 0%, right);
+
+                .leaf, .tendril {
+                    position: absolute;
+                    background: $plant-leaf;
+                    height: $size * .05;
+                    width: $size * .1;
+                    transform: rotate(45deg);
+                    border-radius: 95% 0;
+
+                    &:first-of-type {
+                        transform-origin: 0% 90%;
+                        bottom: 12%;
+                        left: 100%;
+                        width: $size * .11;
+                    }
+
+                    &:nth-of-type(2) {
+                        transform-origin: 100% 50%;
+                        bottom: 10%;
+                        left: 78%;
+                        width: $size * .11;
+                    }
+
+                    &:nth-of-type(3) {
+                        transform-origin: 0% 90%;
+                        bottom: 30%;
+                        left: 100%;
+                    }
+
+                    &:nth-of-type(4) {
+                        transform-origin: 100% 50%;
+                        bottom: 30%;
+                        left: 80%;
+                    }
+
+                    &:nth-of-type(5) {
+                        transform-origin: 0% 90%;
+                        bottom: 50%;
+                        left: 100%;
+                    }
+
+                    &:nth-of-type(6) {
+                        transform-origin: 100% 50%;
+                        bottom: 50%;
+                        left: 80%;
+                    }
+
+                    &:nth-of-type(7) {
+                        transform-origin: 0% 90%;
+                        bottom: 70%;
+                        left: 100%;
+                        width: $size * .09;
+                    }
+
+                    &:nth-of-type(8) {
+                        transform-origin: 100% 50%;
+                        bottom: 70%;
+                        left: 80%;
+                        width: $size * .09;
+                    }
+
+                    &:nth-of-type(9) {
+                        transform-origin: 0% 90%;
+                        bottom: 90%;
+                        left: 100%;
+                        width: $size * .08;
+                    }
+
+                    &:nth-of-type(10) {
+                        transform-origin: 100% 50%;
+                        bottom: 90%;
+                        left: 82%;
+                        width: $size * .08;
+                    }
+                    &:nth-of-type(11) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 100%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .12;
+                        height: $size * .08;
+                        transform: rotate(-15deg);
+                    }
+    
+                    &:nth-of-type(11):after {
+                        content: "";
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.002) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        position: absolute;
+                        box-sizing: border-box;
+                        width: $size * .07;
+                        height: $size * .04;
+                        left: 37%;
+                        bottom: 0%;
+                        transform: scale(1, -1);
+                    }
+    
+                    &:nth-of-type(12) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 102%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .11;
+                        height: $size * .08;
+                        transform: scale(-1, 1); 
+                    }
+                    &:nth-of-type(12):after {
+                        content: "";
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.002) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        position: absolute;
+                        box-sizing: border-box;
+                        width: $size * .07;
+                        height: $size * .04;
+                        left: 37%;
+                        bottom: 0%;
+                        transform: scale(1, -1);
+                    }
+                    &:nth-of-type(13) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 100%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .14;
+                        height: $size * .12;
+                        transform: rotate(-15deg);
+                    }
+                    &:nth-of-type(13):after {
+                        content: "";
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.002) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        position: absolute;
+                        box-sizing: border-box;
+                        width: $size * .07;
+                        height: $size * .05;
+                        left: 40%;
+                        bottom: -30%;
+                        transform: scale(1, -1);
+                    }
+    
+                    &:nth-of-type(14) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 102%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .18;
+                        height: $size * .15;
+                        transform: scale(-1, 1); 
+                    }
+                    &:nth-of-type(14):after {
+                        content: "";
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.002) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        position: absolute;
+                        box-sizing: border-box;
+                        width: $size * .1;
+                        height: $size * .06;
+                        left: 40%;
+                        bottom: 0%;
+                        transform: scale(1, -1);
+                    }
+                    &:nth-of-type(15) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 100%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .11;
+                        height: $size * .10;
+                        transform: rotate(-15deg);
+                    }
+    
+                    &:nth-of-type(16) {
+                        transform-origin: 0% 100%;
+                        bottom: 100%;
+                        left: 102%;
+                        border-top-left-radius: 100px;
+                        border-top-right-radius: 100px;
+                        border: ($size * 0.005) solid $plant-stem;
+                        border-bottom: 0;
+                        background: transparent;
+                        box-sizing: border-box;
+                        width: $size * .18;
+                        height: $size * .12;
+                        transform: scale(-1, 1); 
+                    }
+
+                }}
+            
+                &:nth-of-type(5) {
+                    @include plant-stem(($size * .75), ($size * .75), -68%, right, 25%, 40deg, 50%, right);
+                    .stem {
+                        z-index: 5;
+                    }
+                    .flower{
+                        position: absolute;
+                        height: $size * .001;
+                        width: $size * .1;
+                        padding: $size * 0.01;
+                        margin-bottom: ($size * 0.002);
+                        transform: rotate(-50deg);                      
+                          
+                        &:first-of-type {
+                            transform-origin: 0% 90%;
+                            bottom: 80%;
+                            left: 90%;
+                        }
+                        &:first-of-type:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 80%;
+                            width: 30%;
+                            background: #e06fe8;
+                            transform: skew(0deg, 20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.005) ($size* 0.0025) ($size* 0.0075) ($size* 0.0025) #eacef5 inset;
+                            z-index: 1;
+                          }
+                        &:first-of-type:after {
+                            content: '';
+                            position: absolute;
+                            top: -45%;
+                            right: 35%;
+                            height: 120%;
+                            width: 50%;
+                            background: #aa34b3;
+                            transform: skew(10deg, -20deg);
+                            border-radius: 100%;
+                            border: transparent;
+                            box-shadow: ($size* 0.025) ($size* 0.0025) ($size* 0.0125) ($size* 0.005) #e06fe8 inset;
+                          }
+                        &:nth-of-type(2) {
+                            transform-origin: 0% 90%;
+                            bottom: 78%;
+                            left: 93%;
+                            transform: rotateZ(-90deg)
+                            
+                        }
+                        &:nth-of-type(2):before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 80%;
+                            width: 30%;
+                            background: #e06fe8;
+                            transform: skew(0deg, 20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.005) ($size* 0.0025) ($size* 0.0075) ($size* 0.0025) #eacef5 inset;
+                            z-index: 1;
+                          }
+                        &:nth-of-type(2):after {
+                            content: '';
+                            position: absolute;
+                            top: -45%;
+                            right: 35%;
+                            height: 120%;
+                            width: 50%;
+                            background: #aa34b3;
+                            transform: skew(10deg, -20deg);
+                            border-radius: 100%;
+                            border: transparent;
+                            box-shadow: ($size* 0.025) ($size* 0.0025) ($size* 0.0125) ($size* 0.005) #e06fe8 inset;
+                          }
+                          &:nth-of-type(3) {
+                            transform-origin: 100% 50%;
+                            bottom: 78%;
+                            left: 58%;
+                            transform: scale(-1,1)
+                            
+                        }
+                        &:nth-of-type(3):before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 80%;
+                            width: 30%;
+                            background: #e06fe8;
+                            transform: skew(0deg, 20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.005) ($size* 0.0025) ($size* 0.0075) ($size* 0.0025) #eacef5 inset;
+                            z-index: 1;
+                          }
+                        &:nth-of-type(3):after {
+                            content: '';
+                            position: absolute;
+                            top: -45%;
+                            right: 35%;
+                            height: 120%;
+                            width: 50%;
+                            background: #aa34b3;
+                            transform: skew(10deg, -20deg);
+                            border-radius: 100%;
+                            border: transparent;
+                            box-shadow: ($size* 0.025) ($size* 0.0025) ($size* 0.0125) ($size* 0.005) #e06fe8 inset;
+                          }
+                          &:nth-of-type(4) {
+                            transform-origin: 100% 50%;
+                            bottom: 78%;
+                            left: 58%;
+                            transform: scale(-1,1)
+                            
+                        }
+                        &:nth-of-type(4):before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 80%;
+                            width: 30%;
+                            background: #e06fe8;
+                            transform: skew(0deg, 20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.005) ($size* 0.0025) ($size* 0.0075) ($size* 0.0025) #eacef5 inset;
+                            z-index: 1;
+                          }
+                        &:nth-of-type(4):after {
+                            content: '';
+                            position: absolute;
+                            top: -45%;
+                            right: 35%;
+                            height: 120%;
+                            width: 50%;
+                            background: #aa34b3;
+                            transform: skew(10deg, -20deg);
+                            border-radius: 100%;
+                            border: transparent;
+                            box-shadow: ($size* 0.025) ($size* 0.0025) ($size* 0.0125) ($size* 0.005) #e06fe8 inset;
+                          }
+                          &:nth-of-type(5) {
+                            transform-origin: 0% 90%;
+                            bottom: 75%;
+                            left: 93%;
+                            transform: rotateZ(-40deg)
+                            
+                        }
+                        &:nth-of-type(5):before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 88%;
+                            width: 33%;
+                            background: #e06fe8;
+                            transform: skew(0deg, 20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.005) ($size* 0.0025) ($size* 0.0075) ($size* 0.0025) #eacef5 inset;
+                            z-index: 1;
+                          }
+                        &:nth-of-type(5):after {
+                            content: '';
+                            position: absolute;
+                            top: -45%;
+                            right: 35%;
+                            height: 132%;
+                            width: 55%;
+                            background: #aa34b3;
+                            transform: skew(10deg, -20deg);
+                            border-radius: 100%;
+                            box-shadow: ($size* 0.025) ($size* 0.0025) ($size* 0.0125) ($size* 0.005) #e06fe8 inset;
+                          }
+
+                    }
+                }
+    }}
+
+
+
+.leaf {
+    animation: leafs-sway 3s alternate infinite;
+}
+
+#first {
+    animation: flower-sway 3s alternate infinite;
+}
+
+#second {
+    animation: flower-second 3s alternate infinite;
+}
+
+#third {
+    animation: flower-third 3s alternate infinite;
+}
+
+#forth {
+    animation: flower-forth 3s alternate infinite;
+}
+
+#fifth {
+    animation: flower-fifth 3s alternate infinite;
+}
+
+
+
+
+.second {
+    animation: second-sway 3s alternate infinite;
+}
+
+.first {
+    animation: first-sway 3s alternate infinite;
+}
+
+.third {
+    animation: third-sway 3s alternate infinite;
+}
+
+.forth {
+    animation: forth-sway 3s alternate infinite;
+}
+
+.fifth {
+    animation: fifth-sway 3s alternate infinite;
+}
+
+.sixth {
+    animation: sixth-sway 3s alternate infinite;
+}
+
+
+
+
+
+@keyframes leafs-sway {
+    0% {
+        transform: rotate(50deg);
+    }
+
+    100% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes flower-sway {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(-55deg);
+    }
+}
+
+@keyframes flower-second {
+    0% {
+        transform: rotatez(-85deg);
+    }
+
+    100% {
+        transform: rotatez(-95deg);
+    }
+}
+
+@keyframes flower-third {
+    0% {
+        transform: rotate(170deg);
+    }
+
+    100% {
+        transform: rotate(165deg);
+    }
+}
+
+@keyframes flower-forth {
+    100% {
+        transform: scale(-1.1, 1);
+    }
+}
+
+@keyframes flower-fifth {
+    0% {
+        transform: rotatez(-50deg);
+    }
+
+    100% {
+        transform: rotatez(-65deg);
+    }
+}
+
+@keyframes second-sway {
+    100% {
+        transform: scale(-1.2, 1);
+    }
+}
+
+@keyframes first-sway {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+@keyframes forth-sway {
+    100% {
+        transform: scale(-1.12, 1);
+    }
+}
+
+@keyframes third-sway {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes sixth-sway {
+    100% {
+        transform: scale(-1.05, 1);
+    }
+}
+
+@keyframes fifth-sway {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(-25deg);
+    }
+}
+
+

@@ -1,0 +1,100 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'montserrat_subrayadabold';
+    src: url('montserratsubrayada-bold-webfont.woff2') format('woff2'),
+         url('montserratsubrayada-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserrat_subrayadaregular';
+    src: url('montserratsubrayada-regular-webfont.woff2') format('woff2'),
+         url('montserratsubrayada-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('opensans-bold-webfont.woff2') format('woff2'),
+         url('opensans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('opensans-italic-webfont.woff2') format('woff2'),
+         url('opensans-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('opensans-regular-webfont.woff2') format('woff2'),
+         url('opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dosisextralight';
+    src: url('dosis-variablefont_wght-webfont.woff2') format('woff2'),
+         url('dosis-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('montserrat-bold-webfont.woff2') format('woff2'),
+         url('montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratextrabold';
+    src: url('montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('montserrat-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratitalic';
+    src: url('montserrat-italic-webfont.woff2') format('woff2'),
+         url('montserrat-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('montserrat-regular-webfont.woff2') format('woff2'),
+         url('montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratthin';
+    src: url('montserrat-thin-webfont.woff2') format('woff2'),
+         url('montserrat-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

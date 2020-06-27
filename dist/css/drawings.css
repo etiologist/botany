@@ -1,0 +1,1618 @@
+body {
+  background: #F4EEDF;
+  margin: 0;
+  min-width: 1050px;
+  min-height: 1200px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stack {
+  position: relative;
+}
+
+.pot {
+  /* body of pot*/
+  position: relative;
+  width: 99px;
+  height: 132px;
+  left: 0%;
+  background: #C78F58;
+  -webkit-transform: perspective(300px) rotateX(-45deg);
+          transform: perspective(300px) rotateX(-45deg);
+  bottom: -95%;
+}
+
+.pot:before {
+  /*dirt in pot*/
+  content: '';
+  position: absolute;
+  background: #68594E;
+  height: 36px;
+  width: 99px;
+  bottom: 100%;
+  border-radius: 50% 50% 0 0;
+}
+
+.pot:after {
+  /* rim of pot*/
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 108px;
+  height: 42px;
+  bottom: 95%;
+  left: -5%;
+  -webkit-transform: perspective(600px) rotateX(-45deg);
+          transform: perspective(600px) rotateX(-45deg);
+  background: #C78F58;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(85%, #C78F58), color-stop(85%, #b1753b));
+  background: linear-gradient(to bottom, #C78F58 85%, #b1753b 85%);
+}
+
+.books {
+  position: absolute;
+  top: 105px;
+}
+
+.books .book:first-of-type {
+  position: relative;
+  height: 45px;
+  width: 165px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 165px 6.74663px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 6.165px solid #e48e70;
+  border-left: 6.165px solid #F4EEDF;
+  right: 25px;
+}
+
+.books .book:nth-of-type(2) {
+  position: relative;
+  height: 33px;
+  width: 129px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 129px 4.94753px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 4.521px solid #857264;
+  border-left: 4.521px solid #F4EEDF;
+  right: 10px;
+}
+
+.books .book:nth-of-type(3) {
+  position: relative;
+  height: 42px;
+  width: 195px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 195px 6.29685px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 5.754px solid #F8AA8F;
+  border-left: 5.754px solid #F4EEDF;
+  right: 37px;
+}
+
+.books .book:nth-of-type(4) {
+  position: relative;
+  height: 30px;
+  width: 216px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 216px 4.49775px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 4.11px solid #a57647;
+  border-left: 4.11px solid #F4EEDF;
+  right: 30px;
+}
+
+.books .book:nth-of-type(5) {
+  position: relative;
+  height: 51px;
+  width: 222px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 222px 7.64618px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 6.987px solid #caa936;
+  border-left: 6.987px solid #F4EEDF;
+  right: 40px;
+}
+
+.books .book:nth-of-type(6) {
+  position: relative;
+  height: 39px;
+  width: 219px;
+  border-radius: 0 75px 75px 0;
+  background-size: cover, 219px 5.84708px, cover;
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), -webkit-gradient(linear, left top, left bottom, color-stop(80%, #DFD0A2), color-stop(80%, #d2bd7c)), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  background-image: radial-gradient(8% 100% at 0% 50%, #F4EEDF 50%, transparent 50%), linear-gradient(to bottom, #DFD0A2 80%, #d2bd7c 80%), radial-gradient(8% 100% at 0% 50%, transparent 50%, #DFD0A2 50%);
+  border: 5.343px solid #87ac47;
+  border-left: 5.343px solid #F4EEDF;
+  right: 30px;
+}
+
+.plant-1 {
+  position: absolute;
+  bottom: 100%;
+  height: 300px;
+  width: 99px;
+}
+
+.plant-1 .stem:first-of-type {
+  position: absolute;
+  height: 165px;
+  width: 150px;
+  right: 70%;
+  bottom: -15%;
+  background: transparent;
+  border-radius: 0%;
+  border: 3.75px solid transparent;
+  border-right: 3.75px solid #85a64d;
+  outline-outline-side: 3.75px solid #85a64d;
+  -webkit-transform: rotate(-65deg);
+          transform: rotate(-65deg);
+}
+
+.plant-1 .stem:first-of-type .leaf, .plant-1 .stem:first-of-type .tendril {
+  position: absolute;
+  background: #5f7e5e;
+  height: 15px;
+  width: 30px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 95% 0;
+}
+
+.plant-1 .stem:first-of-type .leaf:first-of-type, .plant-1 .stem:first-of-type .tendril:first-of-type {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 12%;
+  left: 100%;
+  width: 33px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(2), .plant-1 .stem:first-of-type .tendril:nth-of-type(2) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 10%;
+  left: 78%;
+  width: 33px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(3), .plant-1 .stem:first-of-type .tendril:nth-of-type(3) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 30%;
+  left: 100%;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(4), .plant-1 .stem:first-of-type .tendril:nth-of-type(4) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 30%;
+  left: 80%;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(5), .plant-1 .stem:first-of-type .tendril:nth-of-type(5) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 50%;
+  left: 100%;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(6), .plant-1 .stem:first-of-type .tendril:nth-of-type(6) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 50%;
+  left: 80%;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(7), .plant-1 .stem:first-of-type .tendril:nth-of-type(7) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 70%;
+  left: 100%;
+  width: 27px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(8), .plant-1 .stem:first-of-type .tendril:nth-of-type(8) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 70%;
+  left: 80%;
+  width: 27px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(9), .plant-1 .stem:first-of-type .tendril:nth-of-type(9) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 90%;
+  left: 100%;
+  width: 24px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(10), .plant-1 .stem:first-of-type .tendril:nth-of-type(10) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 90%;
+  left: 82%;
+  width: 24px;
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(11), .plant-1 .stem:first-of-type .tendril:nth-of-type(11) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 36px;
+  height: 24px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(11):after, .plant-1 .stem:first-of-type .tendril:nth-of-type(11):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(12), .plant-1 .stem:first-of-type .tendril:nth-of-type(12) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 24px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(12):after, .plant-1 .stem:first-of-type .tendril:nth-of-type(12):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(13), .plant-1 .stem:first-of-type .tendril:nth-of-type(13) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 42px;
+  height: 36px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(13):after, .plant-1 .stem:first-of-type .tendril:nth-of-type(13):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 15px;
+  left: 40%;
+  bottom: -30%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(14), .plant-1 .stem:first-of-type .tendril:nth-of-type(14) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 45px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(14):after, .plant-1 .stem:first-of-type .tendril:nth-of-type(14):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30px;
+  height: 18px;
+  left: 40%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(15), .plant-1 .stem:first-of-type .tendril:nth-of-type(15) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 30px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:first-of-type .leaf:nth-of-type(16), .plant-1 .stem:first-of-type .tendril:nth-of-type(16) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 36px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(2) {
+  position: absolute;
+  height: 300px;
+  width: 150px;
+  right: 56%;
+  bottom: -15%;
+  background: transparent;
+  border-radius: 50%;
+  border: 3.75px solid transparent;
+  border-right: 3.75px solid #85a64d;
+  outline-outline-side: 3.75px solid #85a64d;
+  -webkit-transform: rotate(-32deg);
+          transform: rotate(-32deg);
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf, .plant-1 .stem:nth-of-type(2) .tendril {
+  position: absolute;
+  background: #5f7e5e;
+  height: 15px;
+  width: 30px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 95% 0;
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:first-of-type, .plant-1 .stem:nth-of-type(2) .tendril:first-of-type {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 80%;
+  left: 85%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:nth-of-type(2), .plant-1 .stem:nth-of-type(2) .tendril:nth-of-type(2) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 75%;
+  left: 70%;
+  width: 27px;
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:nth-of-type(3), .plant-1 .stem:nth-of-type(2) .tendril:nth-of-type(3) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 85%;
+  left: 62%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:nth-of-type(4), .plant-1 .stem:nth-of-type(2) .tendril:nth-of-type(4) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 90%;
+  left: 80%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 24px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:nth-of-type(4).tendril:after, .plant-1 .stem:nth-of-type(2) .tendril:nth-of-type(4).tendril:after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 35%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(2) .leaf:nth-of-type(5), .plant-1 .stem:nth-of-type(2) .tendril:nth-of-type(5) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 90%;
+  left: 80%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 39px;
+  height: 36px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(3) {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  right: 15%;
+  bottom: 45%;
+  background: transparent;
+  border-radius: 0%;
+  border: 3.75px solid transparent;
+  border-right: 3.75px solid #85a64d;
+  outline-outline-side: 3.75px solid #85a64d;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf, .plant-1 .stem:nth-of-type(3) .tendril {
+  position: absolute;
+  background: #5f7e5e;
+  height: 15px;
+  width: 30px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 95% 0;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:first-of-type, .plant-1 .stem:nth-of-type(3) .tendril:first-of-type {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 12%;
+  left: 100%;
+  width: 33px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(2), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(2) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 10%;
+  left: 78%;
+  width: 33px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(3), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(3) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 30%;
+  left: 100%;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(4), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(4) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 30%;
+  left: 80%;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(5), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(5) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 50%;
+  left: 100%;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(6), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(6) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 50%;
+  left: 80%;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(7), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(7) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 70%;
+  left: 100%;
+  width: 27px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(8), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(8) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 70%;
+  left: 80%;
+  width: 27px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(9), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(9) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 90%;
+  left: 100%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(10), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(10) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 90%;
+  left: 82%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(11), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(11) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 36px;
+  height: 24px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(11):after, .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(11):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(12), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(12) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 24px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(12):after, .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(12):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(13), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(13) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 42px;
+  height: 36px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(13):after, .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(13):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 15px;
+  left: 40%;
+  bottom: -30%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(14), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(14) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 45px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(14):after, .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(14):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30px;
+  height: 18px;
+  left: 40%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(15), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(15) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 30px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(3) .leaf:nth-of-type(16), .plant-1 .stem:nth-of-type(3) .tendril:nth-of-type(16) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 36px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(4) {
+  position: absolute;
+  height: 165px;
+  width: 150px;
+  right: 100%;
+  bottom: 10%;
+  background: transparent;
+  border-radius: 0%;
+  border: 3.75px solid transparent;
+  border-right: 3.75px solid #85a64d;
+  outline-outline-side: 3.75px solid #85a64d;
+  -webkit-transform: rotate(-65deg);
+          transform: rotate(-65deg);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf, .plant-1 .stem:nth-of-type(4) .tendril {
+  position: absolute;
+  background: #5f7e5e;
+  height: 15px;
+  width: 30px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 95% 0;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:first-of-type, .plant-1 .stem:nth-of-type(4) .tendril:first-of-type {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 12%;
+  left: 100%;
+  width: 33px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(2), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(2) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 10%;
+  left: 78%;
+  width: 33px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(3), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(3) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 30%;
+  left: 100%;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(4), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(4) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 30%;
+  left: 80%;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(5), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(5) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 50%;
+  left: 100%;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(6), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(6) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 50%;
+  left: 80%;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(7), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(7) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 70%;
+  left: 100%;
+  width: 27px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(8), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(8) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 70%;
+  left: 80%;
+  width: 27px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(9), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(9) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 90%;
+  left: 100%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(10), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(10) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 90%;
+  left: 82%;
+  width: 24px;
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(11), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(11) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 36px;
+  height: 24px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(11):after, .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(11):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(12), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(12) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 24px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(12):after, .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(12):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 12px;
+  left: 37%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(13), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(13) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 42px;
+  height: 36px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(13):after, .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(13):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 21px;
+  height: 15px;
+  left: 40%;
+  bottom: -30%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(14), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(14) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 45px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(14):after, .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(14):after {
+  content: "";
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 0.6px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 30px;
+  height: 18px;
+  left: 40%;
+  bottom: 0%;
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(15), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(15) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 33px;
+  height: 30px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.plant-1 .stem:nth-of-type(4) .leaf:nth-of-type(16), .plant-1 .stem:nth-of-type(4) .tendril:nth-of-type(16) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  bottom: 100%;
+  left: 102%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 1.5px solid #85a64d;
+  border-bottom: 0;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 54px;
+  height: 36px;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(5) {
+  position: absolute;
+  height: 225px;
+  width: 225px;
+  right: -68%;
+  bottom: 25%;
+  background: transparent;
+  border-radius: 50%;
+  border: 3.75px solid transparent;
+  border-right: 3.75px solid #85a64d;
+  outline-outline-side: 3.75px solid #85a64d;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.plant-1 .stem:nth-of-type(5) .stem {
+  z-index: 5;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower {
+  position: absolute;
+  height: 0.3px;
+  width: 30px;
+  padding: 3px;
+  margin-bottom: 0.6px;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:first-of-type {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 80%;
+  left: 90%;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:first-of-type:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 30%;
+  background: #e06fe8;
+  -webkit-transform: skew(0deg, 20deg);
+          transform: skew(0deg, 20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+          box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+  z-index: 1;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:first-of-type:after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: 35%;
+  height: 120%;
+  width: 50%;
+  background: #aa34b3;
+  -webkit-transform: skew(10deg, -20deg);
+          transform: skew(10deg, -20deg);
+  border-radius: 100%;
+  border: transparent;
+  -webkit-box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+          box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(2) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 78%;
+  left: 93%;
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(2):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 30%;
+  background: #e06fe8;
+  -webkit-transform: skew(0deg, 20deg);
+          transform: skew(0deg, 20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+          box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+  z-index: 1;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(2):after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: 35%;
+  height: 120%;
+  width: 50%;
+  background: #aa34b3;
+  -webkit-transform: skew(10deg, -20deg);
+          transform: skew(10deg, -20deg);
+  border-radius: 100%;
+  border: transparent;
+  -webkit-box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+          box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(3) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 78%;
+  left: 58%;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(3):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 30%;
+  background: #e06fe8;
+  -webkit-transform: skew(0deg, 20deg);
+          transform: skew(0deg, 20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+          box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+  z-index: 1;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(3):after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: 35%;
+  height: 120%;
+  width: 50%;
+  background: #aa34b3;
+  -webkit-transform: skew(10deg, -20deg);
+          transform: skew(10deg, -20deg);
+  border-radius: 100%;
+  border: transparent;
+  -webkit-box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+          box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(4) {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  bottom: 78%;
+  left: 58%;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(4):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 30%;
+  background: #e06fe8;
+  -webkit-transform: skew(0deg, 20deg);
+          transform: skew(0deg, 20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+          box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+  z-index: 1;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(4):after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: 35%;
+  height: 120%;
+  width: 50%;
+  background: #aa34b3;
+  -webkit-transform: skew(10deg, -20deg);
+          transform: skew(10deg, -20deg);
+  border-radius: 100%;
+  border: transparent;
+  -webkit-box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+          box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(5) {
+  -webkit-transform-origin: 0% 90%;
+          transform-origin: 0% 90%;
+  bottom: 75%;
+  left: 93%;
+  -webkit-transform: rotateZ(-40deg);
+          transform: rotateZ(-40deg);
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(5):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 88%;
+  width: 33%;
+  background: #e06fe8;
+  -webkit-transform: skew(0deg, 20deg);
+          transform: skew(0deg, 20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+          box-shadow: 1.5px 0.75px 2.25px 0.75px #eacef5 inset;
+  z-index: 1;
+}
+
+.plant-1 .stem:nth-of-type(5) .flower:nth-of-type(5):after {
+  content: '';
+  position: absolute;
+  top: -45%;
+  right: 35%;
+  height: 132%;
+  width: 55%;
+  background: #aa34b3;
+  -webkit-transform: skew(10deg, -20deg);
+          transform: skew(10deg, -20deg);
+  border-radius: 100%;
+  -webkit-box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+          box-shadow: 7.5px 0.75px 3.75px 1.5px #e06fe8 inset;
+}
+
+.leaf {
+  -webkit-animation: leafs-sway 3s alternate infinite;
+          animation: leafs-sway 3s alternate infinite;
+}
+
+#first {
+  -webkit-animation: flower-sway 3s alternate infinite;
+          animation: flower-sway 3s alternate infinite;
+}
+
+#second {
+  -webkit-animation: flower-second 3s alternate infinite;
+          animation: flower-second 3s alternate infinite;
+}
+
+#third {
+  -webkit-animation: flower-third 3s alternate infinite;
+          animation: flower-third 3s alternate infinite;
+}
+
+#forth {
+  -webkit-animation: flower-forth 3s alternate infinite;
+          animation: flower-forth 3s alternate infinite;
+}
+
+#fifth {
+  -webkit-animation: flower-fifth 3s alternate infinite;
+          animation: flower-fifth 3s alternate infinite;
+}
+
+.second {
+  -webkit-animation: second-sway 3s alternate infinite;
+          animation: second-sway 3s alternate infinite;
+}
+
+.first {
+  -webkit-animation: first-sway 3s alternate infinite;
+          animation: first-sway 3s alternate infinite;
+}
+
+.third {
+  -webkit-animation: third-sway 3s alternate infinite;
+          animation: third-sway 3s alternate infinite;
+}
+
+.forth {
+  -webkit-animation: forth-sway 3s alternate infinite;
+          animation: forth-sway 3s alternate infinite;
+}
+
+.fifth {
+  -webkit-animation: fifth-sway 3s alternate infinite;
+          animation: fifth-sway 3s alternate infinite;
+}
+
+.sixth {
+  -webkit-animation: sixth-sway 3s alternate infinite;
+          animation: sixth-sway 3s alternate infinite;
+}
+
+@-webkit-keyframes leafs-sway {
+  0% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+  }
+  100% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+}
+
+@keyframes leafs-sway {
+  0% {
+    -webkit-transform: rotate(50deg);
+            transform: rotate(50deg);
+  }
+  100% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+}
+
+@-webkit-keyframes flower-sway {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-55deg);
+            transform: rotate(-55deg);
+  }
+}
+
+@keyframes flower-sway {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-55deg);
+            transform: rotate(-55deg);
+  }
+}
+
+@-webkit-keyframes flower-second {
+  0% {
+    -webkit-transform: rotatez(-85deg);
+            transform: rotatez(-85deg);
+  }
+  100% {
+    -webkit-transform: rotatez(-95deg);
+            transform: rotatez(-95deg);
+  }
+}
+
+@keyframes flower-second {
+  0% {
+    -webkit-transform: rotatez(-85deg);
+            transform: rotatez(-85deg);
+  }
+  100% {
+    -webkit-transform: rotatez(-95deg);
+            transform: rotatez(-95deg);
+  }
+}
+
+@-webkit-keyframes flower-third {
+  0% {
+    -webkit-transform: rotate(170deg);
+            transform: rotate(170deg);
+  }
+  100% {
+    -webkit-transform: rotate(165deg);
+            transform: rotate(165deg);
+  }
+}
+
+@keyframes flower-third {
+  0% {
+    -webkit-transform: rotate(170deg);
+            transform: rotate(170deg);
+  }
+  100% {
+    -webkit-transform: rotate(165deg);
+            transform: rotate(165deg);
+  }
+}
+
+@-webkit-keyframes flower-forth {
+  100% {
+    -webkit-transform: scale(-1.1, 1);
+            transform: scale(-1.1, 1);
+  }
+}
+
+@keyframes flower-forth {
+  100% {
+    -webkit-transform: scale(-1.1, 1);
+            transform: scale(-1.1, 1);
+  }
+}
+
+@-webkit-keyframes flower-fifth {
+  0% {
+    -webkit-transform: rotatez(-50deg);
+            transform: rotatez(-50deg);
+  }
+  100% {
+    -webkit-transform: rotatez(-65deg);
+            transform: rotatez(-65deg);
+  }
+}
+
+@keyframes flower-fifth {
+  0% {
+    -webkit-transform: rotatez(-50deg);
+            transform: rotatez(-50deg);
+  }
+  100% {
+    -webkit-transform: rotatez(-65deg);
+            transform: rotatez(-65deg);
+  }
+}
+
+@-webkit-keyframes second-sway {
+  100% {
+    -webkit-transform: scale(-1.2, 1);
+            transform: scale(-1.2, 1);
+  }
+}
+
+@keyframes second-sway {
+  100% {
+    -webkit-transform: scale(-1.2, 1);
+            transform: scale(-1.2, 1);
+  }
+}
+
+@-webkit-keyframes first-sway {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+@keyframes first-sway {
+  0% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+@-webkit-keyframes forth-sway {
+  100% {
+    -webkit-transform: scale(-1.12, 1);
+            transform: scale(-1.12, 1);
+  }
+}
+
+@keyframes forth-sway {
+  100% {
+    -webkit-transform: scale(-1.12, 1);
+            transform: scale(-1.12, 1);
+  }
+}
+
+@-webkit-keyframes third-sway {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes third-sway {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@-webkit-keyframes sixth-sway {
+  100% {
+    -webkit-transform: scale(-1.05, 1);
+            transform: scale(-1.05, 1);
+  }
+}
+
+@keyframes sixth-sway {
+  100% {
+    -webkit-transform: scale(-1.05, 1);
+            transform: scale(-1.05, 1);
+  }
+}
+
+@-webkit-keyframes fifth-sway {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+}
+
+@keyframes fifth-sway {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+}
+/*# sourceMappingURL=drawings.css.map */
